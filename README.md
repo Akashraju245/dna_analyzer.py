@@ -1,4 +1,6 @@
-DNA Sequence Analyze
+# DNA Sequence Analyzer
+
+![Python](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white)
 
 ##Features
 - Validates DNA sequence  
