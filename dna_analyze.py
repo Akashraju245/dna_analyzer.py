@@ -1,0 +1,37 @@
+def is_valid_dna(seq):
+    valid = set("ATCG")
+    return all(base in valid for base in seq)
+
+def gc_content(seq):
+    gc = seq.count("G") + seq.count("C")
+    return round((gc / len(seq)) * 100, 2)
+
+def nucleotide_count(seq):
+    return {
+        "A": seq.count("A"),
+        "T": seq.count("T"),
+        "G": seq.count("G"),
+        "C": seq.count("C"),
+    }
+
+def dna_to_rna(seq):
+    return seq.replace("T", "U")
+
+def reverse_complement(seq):
+    complement = {"A":"T", "T":"A", "G":"C", "C":"G"}
+    return "".join(complement[base] for base in seq[::-1])
+
+
+dna = input("Enter DNA sequence (A,T,G,C only): ").upper()
+
+if not is_valid_dna(dna):
+    print("❌ Invalid DNA sequence!")
+else:
+    print("\n✅ DNA Sequence is valid!\n")
+    print("📌 Length:", len(dna))
+    print("📌 GC Content:", gc_content(dna), "%")
+    print("📌 Nucleotide Count:", nucleotide_count(dna))
+    print("📌 RNA Sequence:", dna_to_rna(dna))
+    print("📌 Reverse Complement:", reverse_complement(dna))
+
+
